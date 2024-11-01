@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    padding-left: 60px ;
+    padding-right: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#pic {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+#search-container {
+    margin-bottom: 20px;
+    border-radius: 2px;
+    
+}
+
+#date-input {
+    margin-top: 20px;
+    padding: 4px;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+#search-button {
+    margin-top: 20px;
+    padding: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#apod {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

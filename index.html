@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Nasa | APOD</title>
+</head>
+<body>
+    <div>
+    <h1>Foto Astronômica do Dia</h1>
+        <h2 id="titulo"></h2>
+        <h3>Data: <span id="data"></span></h3>
+        <div id="search-container">
+            <input type="date" id="date-input" />
+            <button id="previous-btn">Foto Anterior</button>
+            <button id="dark-mode-toggle">Modo Escuro</button>
+            <button id="search-button">Buscar</button>
+        </div>
+            <img id="pic" src="" alt="foto" width="100%">
+                <p id="descrição"></p>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
