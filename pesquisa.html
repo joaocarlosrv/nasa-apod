@@ -11,39 +11,38 @@
     <link rel="stylesheet" href="style.css">
         <title>Pesquisa</title>
 </head>
-    <body onload="pesquisarData()"></body>>
+    <body> 
+
         <header>
-            <h1 class="logo" onclick="inicio()">APOD</h1>        
-            <!-- <h3 onclick="inicio()">INICIO</h3> -->
+            <h1 id="voltar-inicio" onclick="inicio()">APOD</h1>
         </header>
-    <main class="mainpesquisa">
-        <section>
-            <div>   
-                <div class="tudoPesquisar">
-                    <div class="pesquisar">
-                    <div id="imagem">
-                </div><br>
-            </div>
+
+        <main class="mainpesquisa">
+            <section>
+                <div id="imagem">
+                    <img id="pic" width="700px" alt="Imagem da NASA">
+                </div>
                 <div class="divinput2" id="divinputs">
-                    <label for="data">PESQUISE A DATA DESEJADA</label><br><br>
-                        <input type="date" name="data" class="data">
-                        <button class="botao botaoPesquisar" onclick="pesquisarData()">Pesquisar</button><br>
-                        <h3 class="mensagemErro"></h3><br><br>
-                            <p id="titulo"></p><br>
-                            <p id="autor"></p><br>
-                            <p id="legenda"></p><br><br>
-        </div>
-    </section>
-    </main>       
+                    <label for="data">BUSCAR POR DATA</label><br><br>
+                    <input type="date" id="date-input" name="data" class="data">
+                    <button id="search-button" class="pesquisar">Pesquisar</button>
+                    <p id="titulo"></p>
+                    <p id="autor"></p>
+                    <p id="legenda"></p>
+                </div>
+            </section>
+        
+        </main>
+
         <footer class="rodape">
             <div class="github">
                 <a href="https://github.com/joaocarlosrv" class="icon-github" target="_blank" style="font-size: 2rem;">
                     <i class="bi bi-github"></i>
                 </a>
             </div>
-            <h3></h3>          
-            </div>
         </footer>
-<script src="scripts.js"></script>
+
+        <script src="scripts.js"></script>     
+        
     </body>
 </html>
