@@ -1,52 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Ubuntu:wght@400;700&display=swap');
 
-
-body {
-    background-color: #ffffff;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    padding-left: 60px ;
-    padding-right: 60px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#pic {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
-#search-container {
-    margin-bottom: 20px;
-    border-radius: 2px;
+html{
+    height: 100%;
+    font-family: "Saira", sans-serif;
     
 }
 
-#date-input {
-    margin-top: 20px;
-    padding: 4px;
-    font-size: 14px;
-    cursor: pointer;
-
-}
-#search-button {
-    margin-top: 20px;
-    padding: 4px;
-    font-size: 14px;
-    cursor: pointer;
+body{
+    overflow-x: hidden;
+    
+    min-height: 100%;
+    flex-direction: column;
+    background-color: #000000;
+    color: #fff;
 }
 
-#apod {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 1rem;
+    padding-left: 2rem;
+    height: 1rem;
+    cursor: context-menu;
+  /*  box-shadow: 1px 2px 7px rgba(4, 18, 22, 0.4);  */
+}
+
+header > h1{
+    cursor: pointer;
+    text-align: center;   
+    padding: 14px;
+    border-radius: 20px;
+}
+
+section{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    margin: 9rem 0 10.5% 3rem;
+}
+
+.descrição h1{
+    font-size: 2.5rem;    
+}
+
+.titulo-pesquisa h2{   
+    font-size: 2.5rem;    
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.descrição p{
+    font-size: 1.3rem;
+    max-width: 800px;
+}
+
+button{
+    border: none;
+    background-color: #32333a;
+    color: white;
+    border-radius: 4px;
+    width: 100px;
+    height: 42px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.mainpesquisar{
+    margin-top: 2%;
+}
+
+#pic{
+    
+}
+
+.botaoPesquisar{
+    height: 33px;
+}
+
+button:hover{
+    opacity: 40%;
+    transition: .5s ease-out;
+}
+
+input{
+    height: 28px;
+    margin-bottom: 1%;
+}
+
+footer{
+    box-shadow: 1px 2px 7px rgba(4, 18, 22, 0.4);
+    padding: 1rem;
+    padding-left: 2rem;
+    height: 1rem;
+    cursor: context-menu;
+}
+
+.icon-github{
+    color: #fff;
 }

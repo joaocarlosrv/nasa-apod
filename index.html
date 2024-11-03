@@ -5,24 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>Nasa | APOD</title>
+    <title>APOD | NASA</title>
 </head>
 <body>
-    <div>
-    <h1>Foto Astronômica do Dia</h1>
-        <h2 id="titulo"></h2>
-        <h3>Data: <span id="data"></span></h3>
-        <div id="search-container">
-            <input type="date" id="date-input" />
-            <button id="previous-btn">Foto Anterior</button>
-            <button id="dark-mode-toggle">Modo Escuro</button>
-            <button id="search-button">Buscar</button>
+    <header>
+        <h1 class="logo" onclick="inicio()">APOD</h1>        
+        <!-- <h3 onclick="inicio()">INICIO</h3> -->
+    </header>
+
+    <main>
+        <section>
+            <div class="imagem-principal">
+                <img src="images/galaxy-milky-way-planet.jpeg" alt="galaxia" width="652px" onclick="pesquisar()">
+            </div>
+        <div class="descrição">
+            <h1>Foto Astronômica do Dia</h1>
+            <p>Descubra os cosmos! Cada dia é apresentado uma imagem ou fotografia do nosso fascinante universo,
+                juntamente com uma breve explicação escrita por um astrônomo profissional. O Astronomy Picture of
+                the Day é mantido desde 16 de Junho de 1995 pela NASA e pela Universidade Tecnológica de Michigan.
+            </p><br><br>
+            <button type="button" onclick="pesquisa()">COMEÇAR</button>
         </div>
-            <img id="pic" src="" alt="foto" width="100%">
-                <p id="descrição"></p>
-    </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        <div class="github">
+            <a href="https://github.com/joaocarlosrv" class="icon-github" target="_blank" style="font-size: 2rem;">
+                <i class="bi bi-github"></i>
+            </a>
+        </div>
+            <h3></h3>          
+        </div>
+    </footer>
 <script src="scripts.js"></script>
 </body>
 </html>
