@@ -19,7 +19,7 @@ header{
     flex-direction: row;
     text-align: center;
     padding: 1rem;
-    padding-left: 2rem;
+    padding-left: 9rem;
     height: 1rem;
     cursor: context-menu;
   /*  box-shadow: 1px 2px 7px rgba(4, 18, 22, 0.4);  */
@@ -28,7 +28,7 @@ header{
 header > h1{
     cursor: pointer;
     text-align: center;   
-    padding: 14px;
+    padding: 35px;
     border-radius: 20px;
 }
 
@@ -91,7 +91,6 @@ img #pic{
 .divinput2{
     width: 40%;
     text-align: justify;
-    margin-right: 5%;
 }
 
 label{
@@ -105,7 +104,13 @@ div #titulo{
 
 p#titulo{
     font-size: 1.2rem;
+    padding: 3px;
 }
+
+p#legenda{
+    padding: 3px;
+}
+
 .botaoPesquisar{
     height: 33px;
 }
