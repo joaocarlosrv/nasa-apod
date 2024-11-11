@@ -15,32 +15,33 @@
     <link rel="stylesheet" href="style.css">
     <title>APOD | NASA</title>
 </head>
-<body>
-    <header>
-        <h1 class="logo" onclick="inicio()">Início</h1>        
-    </header>
-    <main>
-        <section>
-            <div class="imagem-principal">
-                <img src="images/galaxy-milky-way-planet.jpeg" alt="galaxia" width="652px" onclick="pesquisar()">
-            </div>
-            <div class="descrição">
-                <h1>Foto Astronômica do Dia</h1>
-                    <p>Descubra os cosmos! Cada dia é apresentado uma imagem ou fotografia do nosso fascinante universo,
-                    juntamente com uma breve explicação escrita por um astrônomo profissional. O Astronomy Picture of
-                    the Day é mantido desde 16 de Junho de 1995 pela NASA e pela Universidade Tecnológica de Michigan.
-                    </p><br><br>
-                <button id="pesquisa-botao" onclick="pesquisa()">COMEÇAR</button>
-            </div>
-        </section>
-    </main>
-    <footer class="rodape">
-        <div class="github">
-            <a href="https://github.com/joaocarlosrv" class="icon-github" target="_blank" style="font-size: 2rem;">
-                <i class="bi bi-github"></i>
-            </a>
-        </div>
-    </footer>
-<script src="scripts.js"></script>
-</body>
+    <body>
+        <header>
+            <h1 class="logo" onclick="inicio()">APOD</h1>        
+        </header>
+        <main class="mainpesquisa">
+            <section>
+                <div class="imagem-principal">
+                    <img src="images/galaxy-milky-way-planet.jpeg" alt="galaxia" width="652px" onclick="pesquisar()">
+                </div>
+                <div class="descrição">
+                    <h1>Foto Astronômica do Dia</h1>
+                        <p>Descubra os cosmos! Cada dia é apresentado uma imagem ou fotografia do nosso fascinante universo,
+                        juntamente com uma breve explicação escrita por um astrônomo profissional. O Astronomy Picture of
+                        the Day é mantido desde 16 de Junho de 1995 pela NASA e pela Universidade Tecnológica de Michigan.
+                        </p><br><br>
+                    <button id="pesquisa-botao" onclick="pesquisa()">COMEÇAR</button>
+                </div>
+            </section>
+        </main>
+        <footer class="rodape">
+            <div class="github">
+                <a href="https://github.com/joaocarlosrv" class="icon-github" target="_blank" style="font-size: 2rem;">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>            
+        </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="scripts.js"></script>
+    </body>
 </html>

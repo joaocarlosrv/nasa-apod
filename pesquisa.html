@@ -24,6 +24,10 @@
                 <div id="imagem">
                     <img id="pic" width="700px" alt="Imagem da NASA">
                 </div>
+                <div id="image-modal" class="modal">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <img id="modal-image" class="modal-content">
+                </div>
                 <div class="divinput2" id="divinputs">
                     <label for="data">BUSCAR POR DATA</label><br><br>
                     <input type="date" id="date-input" name="data" class="data">
@@ -32,11 +36,7 @@
                     <p id="autor"></p>
                     <p id="legenda"></p>
                 </div>
-            </section>           
-                <div id="image-modal" class="modal">
-                    <span class="close-btn">&times;</span>
-                    <img id="modal-image" class="modal-content">
-                </div>
+            </section>       
         </main>
         <footer class="rodape">
             <div class="github">
@@ -45,6 +45,7 @@
                 </a>
             </div>
         </footer>
-        <script src="scripts.js"></script>     
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="scripts.js"></script>            
     </body>
 </html>

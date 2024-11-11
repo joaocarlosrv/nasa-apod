@@ -5,19 +5,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("search-button");
     const dateInput = document.getElementById("date-input");
 
-// Verifica se os elementos foram encontrados 
+
     if (searchButton && dateInput) {
         searchButton.addEventListener("click", () => {
             const date = dateInput.value;
             fetchData(date);
         });
+        
+        dateInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                fetchData(dateInput.value);
+            }
+        });
 
-// imagem inicial sem data
-        fetchData();
+        fetchData(); 
     } else {
         console.error("Erro: Elementos 'search-button' ou 'date-input' não encontrados.");
     }
 });
+
+const modal = document.getElementById("image-modal");
+const modalImage = document.getElementById("modal-image");
+const closeModalBtn = document.querySelector(".close-btn");
+const imgElement = document.getElementById("pic");
+
+if (modal && modalImage && closeModalBtn && imgElement) {
+    imgElement.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImage.src = imgElement.src;
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
 
 async function fetchData(date = "") {
     let fetchUrl = `${url}${api_key}`;
@@ -26,8 +53,10 @@ async function fetchData(date = "") {
     }
 
     try {
+        document.getElementById("titulo").textContent = "Carregando...";
+        
         const response = await fetch(fetchUrl);
-        if (!response.ok) throw new Error("Network response was not ok");
+        if (!response.ok) throw new Error("Erro de rede");
 
         const data = await response.json();
         if (data.media_type === "image") {
@@ -36,46 +65,32 @@ async function fetchData(date = "") {
             document.getElementById("legenda").textContent = data.explanation;
         } else {
             alert("Não há imagem disponível para essa data.");
+            document.getElementById("titulo").textContent = "Sem imagem para esta data";
+            document.getElementById("pic").src = "";
+            document.getElementById("legenda").textContent = "";
         }
     } catch (error) {
-        console.error("Houve um problema com a requisição Fetch:", error);
+        console.error("Erro ao buscar dados:", error);
         document.getElementById("titulo").textContent = "Erro ao carregar dados.";
     }
 }
 
 document.getElementById("voltar-inicio").addEventListener("click", function() {
-    window.location.href = 'index.html'; 
+    window.location.href = 'index.html';
 });
 function pesquisa() {
-    window.location.href = 'pesquisa.html';  
+    window.location.href = 'pesquisa.html';
 }
 
 window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
 });
 
-function goToPage(url) {
-    document.body.classList.add("fade-out");  
-    setTimeout(() => {
-        window.location.href = url;
-    }, 800); // Tempo em milissegundos
+function closeModal() {
+    document.getElementById("image-modal").style.display = "none";
 }
-const modal = document.getElementById("image-modal");
-const modalImage = document.getElementById("modal-image");
-const closeModalBtn = document.querySelector(".close-btn");
-const imgElement = document.getElementById("pic");
-
-imgElement.addEventListener("click", () => {
-    modal.style.display = "block";
-    modalImage.src = imgElement.src; // Define a mesma imagem no modal
-});
-
-closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none";
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeModal();
     }
 });
