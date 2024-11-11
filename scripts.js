@@ -60,3 +60,22 @@ function goToPage(url) {
         window.location.href = url;
     }, 800); // Tempo em milissegundos
 }
+const modal = document.getElementById("image-modal");
+const modalImage = document.getElementById("modal-image");
+const closeModalBtn = document.querySelector(".close-btn");
+const imgElement = document.getElementById("pic");
+
+imgElement.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalImage.src = imgElement.src; // Define a mesma imagem no modal
+});
+
+closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
