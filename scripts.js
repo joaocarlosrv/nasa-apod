@@ -5,20 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("search-button");
     const dateInput = document.getElementById("date-input");
 
+    const today = new Date().toISOString().slice(0, 10);
+    fetchData(today);
 
     if (searchButton && dateInput) {
         searchButton.addEventListener("click", () => {
             const date = dateInput.value;
             fetchData(date);
         });
-        
+
         dateInput.addEventListener("keypress", (event) => {
             if (event.key === "Enter") {
                 fetchData(dateInput.value);
             }
         });
-
-        fetchData(); 
     } else {
         console.error("Erro: Elementos 'search-button' ou 'date-input' não encontrados.");
     }
@@ -48,17 +48,15 @@ if (modal && modalImage && closeModalBtn && imgElement) {
 
 async function fetchData(date = "") {
     let fetchUrl = `${url}${api_key}`;
-    if (date) {
-        fetchUrl += `&date=${date}`;
-    }
+    if (date) fetchUrl += `&date=${date}`;
 
     try {
         document.getElementById("titulo").textContent = "Carregando...";
-        
         const response = await fetch(fetchUrl);
-        if (!response.ok) throw new Error("Erro de rede");
+        if (!response.ok) throw new Error("Erro ao acessar a API");
 
         const data = await response.json();
+
         if (data.media_type === "image") {
             document.getElementById("titulo").textContent = data.title;
             document.getElementById("pic").src = data.hdurl || data.url;
@@ -75,13 +73,6 @@ async function fetchData(date = "") {
     }
 }
 
-document.getElementById("voltar-inicio").addEventListener("click", function() {
-    window.location.href = 'index.html';
-});
-function pesquisa() {
-    window.location.href = 'pesquisa.html';
-}
-
 window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
 });
@@ -89,7 +80,8 @@ window.addEventListener("DOMContentLoaded", () => {
 function closeModal() {
     document.getElementById("image-modal").style.display = "none";
 }
-document.addEventListener("keydown", function(event) {
+
+document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         closeModal();
     }
